@@ -14,7 +14,7 @@ export default class WelcomePage extends Component {
 
     componentDidMount() {
         this.timer = setTimeout(() => {
-            this.props.navigation.replace('IndexPage'); //还有个push
+            this.props.navigation.replace('BottomTab'); //还有个push
             this.timer && clearTimeout(this.timer);
         }, 3000);
     }
