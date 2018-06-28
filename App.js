@@ -18,6 +18,8 @@ import MyPage from './src/pages/MyPage';
 import BrandPage from './src/pages/Category/BrandPage';
 
 import theme from './src/config/theme';
+import CustomeTabBar from './src/pages/CustomeTabBar';
+import SearchPage from './src/pages/SearchPage';
 
 const CategoryPageTopTab = createMaterialTopTabNavigator({
   CategoryPage: {
@@ -47,7 +49,7 @@ const CategoryPageTopTab = createMaterialTopTabNavigator({
         backgroundColor: '#fff'
       },
       tabStyle: {
-        width: theme.screenWidth / 3
+        width: theme.screenWidth * 1 / 3
       },
       activeBackgroundColor: '#fff',
       activeTintColor: theme.primaryColor, //活跃状态下前景色
@@ -63,9 +65,9 @@ const CategoryPageTopTab = createMaterialTopTabNavigator({
         left: theme.screenWidth / 9
       }
     },
-    // tabBarComponent: (props) => (
-    //   <CustomeTabBar {...props} />
-    // )
+    tabBarComponent: (props) => (
+      <CustomeTabBar {...props} />
+    )
   });
 
 const BottomTab = createBottomTabNavigator({
@@ -130,7 +132,13 @@ const App = createStackNavigator({
       gesturesEnabled: true,
       headerTitle: null
     }
-
+  },
+  SearchPage: {
+    screen: SearchPage,
+    navigationOptions: {
+      gesturesEnabled: true,
+      headerTitle: null
+    }
   }
 }, {
     mode: 'card', //页面切换模式，左右：card, 上下：modal
